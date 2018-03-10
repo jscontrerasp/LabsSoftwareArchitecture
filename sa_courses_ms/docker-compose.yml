@@ -1,0 +1,10 @@
+courses-db:
+  build: ./db-server
+  ports:
+    - "3307:3306"
+courses-ms:
+  build: .
+  ports:
+    - "4001:4001"
+  links:
+    - courses-db
